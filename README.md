@@ -37,8 +37,14 @@ In this project I will deploying a static project to AWS S3 Bucket using Terrafo
 - Select the bucket we had created above then Cloudfront will be linked to it
 - 
  
-## Distribution 
+### Distribution 
 [Website Cloudfront Distribution](https://d26beg8fh03ybk.cloudfront.net)
+
+## Route53 
+- Visit the [Route53 dashboard](https://us-east-1.console.aws.amazon.com/route53/v2/home#Dashboard) 
+- select register domain, enter the domain name then go and search the domain. 
+- Alternatively can transfer existing domain to Route53
+- the portal will show a range of domain names and the price range - one can pay and acquire it 
 
 ## Terraform 
 Using the project setup locally:
@@ -58,3 +64,30 @@ Wrote the permissions file:
 
 Wrote env file:
 - It has the *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY* linked to my user IAM role  
+
+Run the following Commands
+``````
+$ terraform init
+
+``````
+
+![terraform initializing](./terraforminit.png)
+
+```$ terraform fmt```
+
+permissions.tf
+
+
+```$ terraform validate```
+
+![terraform validate](./terraformvalidate.png)
+
+```$ terraform plan```
+
+![terraform plan](./terraformplan.png)
+
+- I didn't pay for the Route53 domain so I used a [netlify](https://terraformaws111.netlify.app/) domain as my domain name for the Route53 hosted zone 
+
+## Acknowledgement 
+
+I acknowledge [AltSchool Africa](https://altschoolafrica.com/) and our instructor for the quality Cloud Engineering course and walkthrough AWS services, Terraform and more skills that has been useful over this project.
